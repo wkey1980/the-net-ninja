@@ -1,15 +1,19 @@
-import './App.css';
-import Navbar from './Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Notes from './pages/Notes'
+import Create from './pages/Create'
 
 function App() {
-  const title = 'Hello, Welcome to React'
-  const likes = 50
   return (
-    <div className="App">
-      <h1>{title}</h1>
-      <p>Liked {likes} times</p>
-      <Navbar />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Notes />
+        </Route>
+        <Route path="/create">
+          <Create />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
