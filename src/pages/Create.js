@@ -18,7 +18,6 @@ export default function Create() {
 		<Container>
 
 			<Typography
-				className={classes.title}
 				variant="h6"
 				component="h2"
 				color="textSecondary"
@@ -28,14 +27,22 @@ export default function Create() {
 			</Typography>
 
 			<Button
-				className={classes.btn}
+				onClick={() => console.log('You Have Clicked Me')}
+				type="submit"
+				color="primary"
+				variant="contained"
+				endIcon={<KeyboardArrowRightIcon />}
+			>
+				Submit
+			</Button>
+			<Button
 				onClick={() => console.log('You Have Clicked Me')}
 				type="submit"
 				color="secondary"
 				variant="contained"
 				endIcon={<KeyboardArrowRightIcon />}
 			>
-				Submit
+				Exit
 			</Button>
 
 		</Container>
