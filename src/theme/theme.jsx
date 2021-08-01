@@ -1,14 +1,14 @@
 import React from 'react'
 import { createTheme } from '@material-ui/core'
+import { purple } from '@material-ui/core/colors'
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#fca945'
+            // main: '#fefefe'
+            main: '#008080'
         },
-        secondary: {
-            main: '#ff00ff'
-        }
+        secondary: purple
     },
     typography: {
         fontFamily: 'Dancing Script',

@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from '@material-ui/core'
+import { Button, Container, TextField, Typography } from '@material-ui/core'
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core';
@@ -7,7 +7,11 @@ import { makeStyles } from '@material-ui/core';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles({
-
+	field: {
+		marginTop: 20,
+		marginBottom: 20,
+		display: 'block',
+	}
 })
 
 export default function Create() {
@@ -26,15 +30,27 @@ export default function Create() {
 				Create a New Note
 			</Typography>
 
-			<Button
-				onClick={() => console.log('You Have Clicked Me')}
-				type="submit"
-				color="primary"
-				variant="contained"
-				endIcon={<KeyboardArrowRightIcon />}
-			>
-				Submit
-			</Button>
+			<form noValidate autoComplete="off">
+
+			<TextField
+					className={classes.field}
+					label="Note Title"
+					variant="outlined"
+					color="secondary"
+					fullWidth
+					required />
+
+				<TextField
+					className={classes.field}
+					label="Details"
+					variant="outlined"
+					color="secondary"
+					fullWidth
+					required
+					multiline rows={4} />
+
+			</form>
+
 			<Button
 				onClick={() => console.log('You Have Clicked Me')}
 				type="submit"
@@ -42,7 +58,7 @@ export default function Create() {
 				variant="contained"
 				endIcon={<KeyboardArrowRightIcon />}
 			>
-				Exit
+				Submit
 			</Button>
 
 		</Container>
